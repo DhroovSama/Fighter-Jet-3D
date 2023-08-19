@@ -587,6 +587,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1727466047}
     m_Modifications:
+    - target: {fileID: 892466688705979464, guid: 4191e3c3a34368148b590f849b8de12a, type: 3}
+      propertyPath: controlSpeed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1343154496183857675, guid: 4191e3c3a34368148b590f849b8de12a, type: 3}
       propertyPath: m_Name
       value: Player Ship
