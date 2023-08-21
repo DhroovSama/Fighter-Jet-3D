@@ -294,7 +294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.15410687, y: -0, z: -0, w: 0.9880542}
-  m_LocalPosition: {x: 0, y: 15.71, z: -40.4}
+  m_LocalPosition: {x: 0, y: 11, z: -41.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -587,10 +587,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1727466047}
     m_Modifications:
-    - target: {fileID: 892466688705979464, guid: 4191e3c3a34368148b590f849b8de12a, type: 3}
-      propertyPath: controlSpeed
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 1343154496183857675, guid: 4191e3c3a34368148b590f849b8de12a, type: 3}
       propertyPath: m_Name
       value: Player Ship
