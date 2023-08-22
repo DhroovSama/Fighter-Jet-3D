@@ -100,6 +100,6 @@ MonoBehaviour:
   xRange: 15
   YRange: 10
   positionPitchFactor: -2
-  controlPitchFactor: -15
+  controlPitchFactor: -10
   positionYawFactor: -2
-  controlRollFactor: 20
+  controlRollFactor: 15
