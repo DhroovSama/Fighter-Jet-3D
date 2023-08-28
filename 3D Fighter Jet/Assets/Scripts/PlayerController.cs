@@ -6,21 +6,55 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] float controlSpeed = 30f;
-    [SerializeField] float xRange = 5f;
-    [SerializeField] float YRange = 5f;
+    #region my variables
 
+    [Header("General Setup Settings")]
+    [Tooltip("How fast ship moves up and down based on player movement")]
+    [SerializeField] float controlSpeed = 30f;
+    [Tooltip("How far player ship moves horizontally")]
+    [SerializeField] float xRange = 5f;
+    [Tooltip("How far player ship move vertically")]
+    [SerializeField] float YRange = 5f;
+    [Header("Laser Gun Array")]
+    [Tooltip("Add all player lasers")]
+    [SerializeField] GameObject[] Lasers;
+
+    [Header("Screen Position based tuning")]
     [SerializeField] float positionPitchFactor = -2f;
-    [SerializeField] float controlPitchFactor = -10f;
     [SerializeField] float positionYawFactor = 2f;
+    [Header("Player Input based tuning")]
+    [SerializeField] float controlPitchFactor = -10f;
     [SerializeField] float controlRollFactor = -20f;
 
     float xThrow, yThrow;
+    #endregion
 
     void Update()
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
+    }
+
+    void ProcessFiring()
+    {
+        if (Input.GetButton("FireLaser"))
+        {
+            SetLasersActive(true);
+        }
+        else
+        {
+            SetLasersActive(false);
+        }
+    }
+
+    void SetLasersActive(bool isLaserActive)
+    {
+        foreach (GameObject laser in Lasers)
+        {
+            var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = isLaserActive;
+        }
     }
 
     void ProcessRotation()
@@ -32,7 +66,7 @@ public class PlayerController : MonoBehaviour
         float yaw = transform.localPosition.x * positionYawFactor;
         float roll = xThrow * controlRollFactor;
 
-        transform.localRotation = Quaternion.Euler(pitch, yaw, roll ); 
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 
     void ProcessTranslation()
