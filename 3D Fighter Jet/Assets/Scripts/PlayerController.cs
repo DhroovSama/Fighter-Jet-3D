@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     #region my variables
 
     [Header("General Setup Settings")]
